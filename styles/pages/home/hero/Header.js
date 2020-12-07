@@ -4,129 +4,132 @@ import fonts from "../../../helpers/fonts";
 import colors from "../../../helpers/colors";
 
 const Header = styled.header`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), transparent);
-  backdrop-filter: blur(1px);
-  position: fixed;
-  z-index: 99;
-  transition: background, top 0.3s linear;
-  top: auto;
-
-  &.sticky {
-    top: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
-    backdrop-filter: blur(5px);
-    .logoHeader {
-      width: 180px;
-    }
-  }
-
-  .logoHeader {
-    width: 230px;
-    height: 100%;
-    transition: all 0.3s linear;
-  }
-
-  .navigation {
-    display: flex;
-    align-items: center;
-    .nav_items {
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-left: 1.5rem;
-      font-family: ${fonts.light};
-      cursor: pointer;
-
-      svg {
-        width: 25px;
-        height: 25px;
-        margin-bottom: 0.5rem;
-        fill: ${colors.orange};
-      }
-    }
-  }
-
-  #nav_filter {
-    height: 100vh;
-    width: 100vw;
+  .header {
+    background-color: #fff;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
     position: fixed;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+  }
+
+  .header li a {
+    display: block;
+    padding: 20px 20px;
+    border-right: 1px solid #f4f4f4;
+    text-decoration: none;
+  }
+
+  .header li a:hover,
+  .header .menu-btn:hover {
+    background-color: #f4f4f4;
+  }
+
+  .header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+
+  /* menu */
+
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+  }
+
+  /* menu icon */
+
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+
+  .header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 18px;
+  }
+
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #333;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+  }
+
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+
+  /* menu btn */
+
+  .header .menu-btn {
+    display: none;
+  }
+
+  .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
     top: 0;
-    left: 0;
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: -1;
-    transition: opacity 0.3s ease-in 0s;
-
-    &.open {
-      opacity: 0.9;
-      z-index: 99;
-    }
   }
 
-  .diagSearch {
-    p {
-      display: flex;
-    }
-    input {
-      border: none;
-      padding: 1rem;
-    }
-    button {
-      display: flex;
-      align-items: center;
-      border: none;
-      padding: 0 1rem;
-      background-color: ${colors.orange};
-    }
-    svg {
-      fill: #ffffff;
-      width: 20px;
-    }
-  }
+  /* 48em = 768px */
 
-  @media (max-width: ${breakpoints.medium}) {
-    .nav_items {
-      span {
-        display: none;
-      }
+  @media (min-width: 48em) {
+    .header li {
+      float: left;
     }
-    .diagSearch {
-      position: absolute;
-      right: 0;
-      top: 13%;
+    .header li a {
+      padding: 20px 30px;
     }
-  }
-
-  @media (max-width: ${breakpoints.small}) {
-    padding: 1rem;
-    .logoHeader {
-      max-width: 100px;
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
     }
-  }
-
-  @media (max-width: ${breakpoints.xsmall}) {
-    .navigation {
-      .nav_items {
-        svg {
-          width: 20px;
-          height: 20px;
-        }
-      }
-    }
-
-    .diagSearch {
-      input {
-        padding: 0.3rem;
-      }
-      button {
-        padding: 0 0.3rem;
-      }
+    .header .menu-icon {
+      display: none;
     }
   }
 `;
