@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Container from "../styles/global/Container";
 
 const Home = () => {
   return (
@@ -8,12 +9,6 @@ const Home = () => {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-      </main>
     </React.Fragment>
   );
 };
