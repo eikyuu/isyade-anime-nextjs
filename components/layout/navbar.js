@@ -1,17 +1,21 @@
 import React from "react";
-import Header from "../../styles/global/Header";
+import Header from "../../styles/global/navbar/Header";
+import Logo from "../../styles/global/navbar/Logo";
+import Menu from "../../styles/global/navbar/Menu";
+import MenuBtn from "../../styles/global/navbar/MenuBtn";
+import MenuIcon from "../../styles/global/navbar/MenuIcon";
 
 const navbar = (props) => {
   return (
     <Header>
-      <a href="" className="logo">
+      <Logo href="" className="logo">
         Navbar
-      </a>
-      <input className="menu-btn" type="checkbox" id="menu-btn" />
-      <label className="menu-icon" htmlFor="menu-btn">
+      </Logo>
+      <MenuBtn className="menu-btn" type="checkbox" id="menu-btn" />
+      <MenuIcon className="menu-icon" htmlFor="menu-btn">
         <span className="navicon"></span>
-      </label>
-      <ul className="menu">
+      </MenuIcon>
+      <Menu className="menu">
         <li>
           <a href="#work">base navbar</a>
         </li>
@@ -24,7 +28,7 @@ const navbar = (props) => {
         <li>
           <a href="#contact">Contact</a>
         </li>
-      </ul>
+      </Menu>
     </Header>
   );
 };
