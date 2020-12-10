@@ -1,6 +1,7 @@
 import React from "react";
 import GlobalStyles from "../styles/global/GlobalStyles";
 import Layout from "../components/layout/layout";
+import Container from "../styles/components/Container";
 
 const MyApp = ({ Component, pageProps }) => {
   return (

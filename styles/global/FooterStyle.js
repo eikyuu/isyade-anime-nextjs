@@ -7,9 +7,8 @@ const FooterStyle = styled.footer`
   width: 100%;
   height: auto;
   background-color: #070617;
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  display: flex;
+  justify-content: center;
 
   .col {
     width: 190px;
@@ -64,14 +63,8 @@ const FooterStyle = styled.footer`
     clear: both;
   }
 
-  @media only screen and (min-width: ${breakpoints.large}) {
-    .contain {
-      width: 1200px;
-      margin: 0 auto;
-    }
-  }
   @media only screen and (max-width: 1139px) {
-    .contain .social {
+    .social {
       width: 1000px;
       display: block;
     }
