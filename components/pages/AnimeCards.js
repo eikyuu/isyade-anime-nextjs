@@ -1,23 +1,19 @@
-import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import animeApi from "../../services/animeApi";
-import axios from "axios";
 
-export const getStaticProps = async () => {
-  const response = await axios.get("https://kitsu.io/api/edge/anime");
+const AnimeCards = () => {
+  const [data, setData] = useState();
 
-  return {
-    props: {
-      dataAnimes: response.data,
-    },
+  const loadData = async () => {
+    const response = await animeApi.findAll();
+    setData(response);
   };
-};
 
-const AnimeCards = ({ dataAnimes }) => {
-  const [animes, setAnimes] = useState(dataAnimes);
+  useEffect(() => {
+    loadData();
+  }, []);
 
-  console.log(animes);
-
+  console.log(data[0].attributes);
   return <h1>test</h1>;
 };
 
