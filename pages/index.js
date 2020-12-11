@@ -11,6 +11,7 @@ const Home = ({ animes }) => {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <Container>
         <AnimeCards animes={animes} />
       </Container>

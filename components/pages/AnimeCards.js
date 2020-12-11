@@ -1,12 +1,17 @@
 import React from "react";
+import Container from "../../styles/components/Container";
 
 const AnimeCards = ({ animes }) => {
   return (
-    <ul>
+    <>
       {animes.map((index) => {
-        return <h1>{index.attributes.canonicalTitle}</h1>;
+        return (
+          <div className="card">
+            <img src={index.attributes.posterImage.small} alt="Avatar" />
+          </div>
+        );
       })}
-    </ul>
+    </>
   );
 };
 export default AnimeCards;

@@ -8,10 +8,6 @@ const Container = styled.section`
   padding: 2rem;
   box-sizing: border-box;
   z-index: 200;
-
-  @media screen and (max-width: ${breakpoints.small}) {
-    padding: 0.5rem;
-  }
 `;
 
 export default Container;
