@@ -1,32 +1,12 @@
-import Axios from "axios";
-import React, { useEffect, useState } from "react";
-import animeApi from "../../services/animeApi";
+import React from "react";
 
-const AnimeCards = ({ article }) => {
-  // const [data, setData] = useState();
-
-  const loadData = async () => {
-    const response = await animeApi.findAll();
-    // setData(response);
-  };
-
-  // useEffect(() => {
-  //   loadData();
-  // }, []);
-  // console.log(data.data[0].attributes.canonicalTitle);
-  console.log(article);
-  return <h1>test</h1>;
+const AnimeCards = ({ animes }) => {
+  return (
+    <ul>
+      {animes.map((index) => {
+        return <h1>{index.attributes.canonicalTitle}</h1>;
+      })}
+    </ul>
+  );
 };
-
-export const getStaticProps = async () => {
-  const result = await fetch("https://kitsu.io/api/edge/anime");
-  const article = await result.json();
-
-  return {
-    props: {
-      article,
-    },
-  };
-};
-
 export default AnimeCards;
