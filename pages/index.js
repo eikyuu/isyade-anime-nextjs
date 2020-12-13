@@ -4,22 +4,24 @@ import Container from "../styles/components/Container";
 import AnimeCards from "../components/pages/index/AnimeCards";
 import animeApi from "../services/animeApi";
 
-const Home = ({ animes }) => {
+const Home = ({ animesTrending, animes }) => {
   return (
     <React.Fragment>
       <Head>
         <title>Isyade Anime</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AnimeCards animes={animes} />
+      <AnimeCards animesTrending={animesTrending} animes={animes} />
     </React.Fragment>
   );
 };
 
 export async function getStaticProps() {
-  const animes = await animeApi.findTrendingAnime();
+  const animesTrending = await animeApi.findTrendingAnime();
+  const animes = await animeApi.findAll();
   return {
     props: {
+      animesTrending,
       animes,
     },
   };
