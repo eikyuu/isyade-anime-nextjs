@@ -8,27 +8,29 @@ import MenuIcon from "../../styles/global/navbar/MenuIcon";
 const navbar = (props) => {
   return (
     <Header>
-      <Logo href="" className="logo">
-        Navbar
-      </Logo>
-      <MenuBtn className="menu-btn" type="checkbox" id="menu-btn" />
-      <MenuIcon className="menu-icon" htmlFor="menu-btn">
-        <span className="navicon"></span>
-      </MenuIcon>
-      <Menu className="menu">
-        <li>
-          <a href="#work">base navbar</a>
-        </li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#careers">Careers</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-      </Menu>
+      <div>
+        <Logo href="" className="logo">
+          Isyade Animes
+        </Logo>
+        <MenuBtn className="menu-btn" type="checkbox" id="menu-btn" />
+        <MenuIcon className="menu-icon" htmlFor="menu-btn">
+          <span className="navicon"></span>
+        </MenuIcon>
+        <Menu className="menu">
+          <li>
+            <a href="#work">base navbar</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#careers">Careers</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </Menu>
+      </div>
     </Header>
   );
 };

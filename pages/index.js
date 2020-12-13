@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Container from "../styles/components/Container";
-import AnimeCards from "../components/pages/AnimeCards";
+import AnimeCards from "../components/pages/index/AnimeCards";
 import animeApi from "../services/animeApi";
 
 const Home = ({ animes }) => {
@@ -11,16 +11,13 @@ const Home = ({ animes }) => {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Container>
-        <AnimeCards animes={animes} />
-      </Container>
+      <AnimeCards animes={animes} />
     </React.Fragment>
   );
 };
 
 export async function getStaticProps() {
-  const animes = await animeApi.findAll();
+  const animes = await animeApi.findTrendingAnime();
   return {
     props: {
       animes,

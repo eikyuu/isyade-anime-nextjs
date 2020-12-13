@@ -3,9 +3,7 @@ import breakpoints from "../helpers/breakpoints";
 
 const Container = styled.section`
   width: 100%;
-  height: 100vh;
-  display: grid;
-  padding: 2rem;
+  padding: 5rem;
   box-sizing: border-box;
   z-index: 200;
 `;
