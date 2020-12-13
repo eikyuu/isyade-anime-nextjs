@@ -8,7 +8,7 @@ const Home = ({ animes }) => {
   return (
     <React.Fragment>
       <Head>
-        <title>Create Next App</title>
+        <title>Isyade Anime</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AnimeCards animes={animes} />
