@@ -4,6 +4,7 @@ import breakpoints from "../helpers/breakpoints";
 const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   img {
     height: 200px;
     margin: 10px 10px 0 0;
