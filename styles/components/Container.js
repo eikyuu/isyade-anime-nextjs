@@ -6,6 +6,8 @@ const Container = styled.section`
   padding: 5rem;
   box-sizing: border-box;
   z-index: 200;
+  justify-content: center;
+  text-align: center;
 `;
 
 export default Container;
