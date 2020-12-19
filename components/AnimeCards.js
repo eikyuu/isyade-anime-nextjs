@@ -6,13 +6,15 @@ const AnimeCards = ({ animes, title }) => {
   return (
     <>
       <Container>
-        <h2>{title}</h2>
         <Cards>
-          {animes.map((index) => {
-            return (
-              <img src={index.attributes.posterImage.small} alt="Avatar" />
-            );
-          })}
+          <h2>{title}</h2>
+          <div className="cards_div">
+            {animes.map((index) => {
+              return (
+                <img src={index.attributes.posterImage.small} alt="Avatar" />
+              );
+            })}
+          </div>
         </Cards>
       </Container>
     </>

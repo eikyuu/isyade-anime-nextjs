@@ -18,16 +18,10 @@ const navbar = (props) => {
         </MenuIcon>
         <Menu className="menu">
           <li>
-            <a href="#work">base navbar</a>
+            <a href="#work">Animes</a>
           </li>
           <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#careers">Careers</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
+            <a href="#about">Mangas</a>
           </li>
         </Menu>
       </div>

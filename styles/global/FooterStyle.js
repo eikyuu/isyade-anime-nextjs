@@ -6,9 +6,10 @@ import colors from "../helpers/colors";
 const FooterStyle = styled.footer`
   width: 100%;
   height: auto;
-  background-color: #070617;
+  background-color: ${colors.mauve};
   display: flex;
   justify-content: center;
+  margin-top: 5rem;
 
   .col {
     width: 190px;

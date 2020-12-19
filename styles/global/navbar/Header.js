@@ -4,14 +4,14 @@ import fonts from "../../helpers/fonts";
 import colors from "../../helpers/colors";
 
 const Header = styled.header`
-  background-color: #fff;
+  background-color: ${colors.mauve};
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
-  position: fixed;
+  position: absolute;
   width: 100%;
   z-index: 3;
 
   a {
-    color: #000;
+    color: #fff;
   }
 
   ul {
@@ -19,14 +19,13 @@ const Header = styled.header`
     padding: 0;
     list-style: none;
     overflow: hidden;
-    background-color: #fff;
+    background-color: ${colors.mauve};
     li a {
       display: block;
       padding: 20px 20px;
-      border-right: 1px solid #f4f4f4;
       text-decoration: none;
       &:hover {
-        background-color: #f4f4f4;
+        color: gray;
       }
     }
   }
